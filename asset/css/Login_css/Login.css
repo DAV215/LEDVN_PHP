@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif !important;
+    height: 100%;
+}
+
+html {
+    font-family: 'Quicksand', sans-serif !important;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+@keyframes background_inf {
+    0% {
+        background-position: right center;
+    }
+    50% {
+        background-position: left center;
+    }
+    100% {
+        background-position: right center;
+    }
+}
+
+.wrapper {
+    position: relative;
+    background-image: linear-gradient(25deg, #fbc2eb 0%, #a6c1ee 50%, rgb(238, 166, 166) 70%, rgb(255, 15, 15) 100%);
+    background-size: 200%;
+    animation: background_inf infinite 5s;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.content {
+    width: 30%;
+    height: 60%;
+    background-color: #ffffff;
+    margin: 0% 35%;
+    transform: translateY(100px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+form {
+    width: 100%;
+    height: 100%;
+}
+
+.form_name {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.box {
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+}
+
+.row {
+    width: 90%;
+    flex-grow: 1;
+}
+
+.row input {
+    padding: 10px 0;
+    margin: 5px 10px;
+    width: 90%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+}
+
+.row input:hover {
+    border-bottom: 2px solid #ccc;
+    outline: none;
+}
+
+.border_2 {
+    background-color: #fbc2eb;
+    margin: 0 10px;
+    height: 5px;
+    width: 90%;
+    padding: 0;
+    transform: translateY(-7px);
+    display: none;
+}
+
+.row:hover input {
+    border: none;
+}
+
+.row:hover .border_2 {
+    display: block;
+    background-image: linear-gradient(to right, #a6c1ee 0%, rgb(238, 166, 166) 100%);
+    animation: run_border 1 1s;
+}
+
+@keyframes run_border {
+    0% {
+        width: 0;
+        background-position: left center;
+    }
+    50% {
+        width: 100%;
+        background-position: right center;
+    }
+    70% {
+        width: 50%;
+        background-position: left center;
+    }
+    100% {
+        width: 90%;
+        background-position: right center;
+    }
+}
+
+button {
+    border: none;
+    outline: none;
+    width: 40%;
+    height: 41px;
+    font-size: 20px;
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: 600;
+    margin: 0 30%;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    background-size: 400%;
+    background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 50%, rgb(238, 166, 166) 70%, rgb(255, 15, 15) 100%);
+    opacity: 01;
+}
+
+.row button:hover {
+    animation: btn_background 1s infinite;
+    color: #000;
+}
+
+@keyframes btn_background {
+    0% {
+        background-position: 0%;
+    }
+    50% {
+        background-position: 90%;
+    }
+    100% {
+        background-position: 0%;
+    }
+}
+
+.fa:hover {
+    color: rgb(255, 1, 1) !important;
+    font-size: 30px;
+    transition: linear 0.5s;
+}
+
+.signup {
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    backdrop-filter: blur(20px);
+    border-radius: 50px 50px 20px 20px;
+    height: 100px;
+    transform: translateY(-100px);
+    transition: 0.5s;
+    flex-wrap: wrap !important;
+    flex-direction: column;
+}
+
+.signup .row,
+.signup p {
+    display: none;
+    opacity: 0;
+}
+
+.signup span {
+    margin: 30px;
+}
+
+.signup:hover {
+    height: 90%;
+    transform: translateY(-100%);
+}
+
+form[style="--i: 2;"] {
+    height: 20%;
+}
+
+form[style="--i: 2;"]:hover {
+    height: 100%;
+}
+
+form[style="--i: 2;"]:focus-within {
+    height: 100%;
+}
+
+form[style="--i: 2;"]:focus-within .signup {
+    height: 90%;
+    transform: translateY(-100%);
+}
+
+form[style="--i: 2;"]:focus-within .signup .row,
+form[style="--i: 2;"]:focus-within .signup p {
+    display: block !important;
+    opacity: 1;
+    animation: show_signup_content 1 1s ease;
+}
+
+.signup:hover .row,
+.signup:hover p {
+    display: block;
+    opacity: 1;
+    animation: show_signup_content 1 1s ease;
+}
+
+.signup:hover .form_name {
+    scale: 1.2;
+    transition: 0.5s ease-in;
+}
+
+@keyframes show_signup_content {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .content {
+        width: 90%;
+        height: 60%;
+        background-color: #ffffff;
+        margin-left: 5%;
+        transform: translateY(100px);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+}

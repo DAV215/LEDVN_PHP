@@ -1,0 +1,173 @@
+/* footer_main */
+
+.neon-text {
+    font-size: 2.3rem;
+    font-weight: 900;
+    color: #fff;
+    position: relative;
+    animation: neon .5s ease-in-out infinite alternate;
+    font-family: 'Quicksand', sans-serif !important;
+    letter-spacing: 3px;
+    padding: 10px 0;
+}
+
+@keyframes neon {
+    0% {
+        text-shadow: 0 0 10px #f44336, 0 0 20px #f44336, 0 0 30px #f44336;
+    }
+    100% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00ff00;
+    }
+}
+
+.footer_body {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    height: 400px;
+    background-color: #000000;
+    color: #fff;
+    padding: 20px 0px;
+    margin-top: 200px;
+}
+
+.footer_container {
+    width: 90%;
+    margin: 0 5%;
+    display: flex;
+    flex-wrap: nowrap;
+    font-family: 'Quicksand', sans-serif !important;
+}
+
+.company_name {
+    display: block;
+    margin-left: 5%;
+}
+
+.company_name_moblie {
+    display: none !important;
+}
+
+.footer_col {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.footer_col_title h1 {
+    color: #f44336;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.footer_col_content h2 {
+    font-size: large;
+    color: #ffffffCC;
+    font-weight: bold;
+}
+
+.footer_col_content h3 {
+    font-size: medium;
+    color: #ffffffCC;
+}
+
+.footer_col_content a {
+    color: #ffffffCC;
+    text-decoration: none;
+}
+
+.footer_col_content a:hover {
+    color: #ffffffCC;
+    text-decoration: none;
+    animation: neon .2s ease-in-out infinite alternate;
+}
+
+.social .fa-brands {
+    padding: 20px;
+    font-size: 2rem !important;
+}
+
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: start;
+}
+
+.social img {
+    margin: 20px;
+}
+
+.inputmail {
+    width: 250px;
+    display: flex;
+}
+
+.inputmail button {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
+    font-family: 'Quicksand', sans-serif !important;
+    color: white;
+    font-size: medium;
+}
+
+.inputmail button:hover {
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .footer_body {
+        width: 100%;
+        height: auto;
+        background-color: #000000;
+        color: #fff;
+        padding: 20px 0px;
+    }
+    .company_name {
+        display: none !important;
+    }
+    .company_name_moblie {
+        display: block !important;
+        margin-left: 5%;
+    }
+    .neon-text {
+        font-size: 2rem;
+    }
+    .footer_container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    h1 {
+        font-size: medium;
+        margin-left: 0;
+    }
+    .footer_col {}
+    .footer_col_title {}
+    .fa-solid {}
+    .fa-location-dot {}
+    .footer_col_content {}
+    .fa-phone {}
+    .fa-envelope {}
+    .social {}
+    .fa-brands {}
+    .fa-tiktok {}
+    .fa-instagram {}
+    .fa-facebook {}
+    .readmore_topage {
+        position: relative;
+        height: 40px;
+        width: 150px;
+        outline: 0px;
+        left: calc(50% - 75px);
+        transform: translate(0, 200px);
+        border: none;
+        color: #fff !important;
+        background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
+        font-weight: 900;
+        border-radius: 10px;
+        font-family: 'Quicksand', sans-serif !important;
+    }
+}
