@@ -1,5 +1,5 @@
 
-<div class="main">
+<div class="admin_content">
     <?php
         if(isset($_GET['action']) && $_GET['query']){
             $tam = $_GET['action'];

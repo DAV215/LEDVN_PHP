@@ -9,33 +9,88 @@ html {
     scroll-behavior: smooth;
 }
 
+.admincp_content {
+    position: relative;
+    min-height: 100vh;
+}
+
 p.pagename {
     font-weight: 900;
 }
 
-.admincp_menu {
+.sidebar_menu {
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    background-color: #343A40;
+}
+
+.main_menu {
     position: sticky;
     z-index: 99 !important;
-    height: 40px;
+    top: 40px;
+    width: 100%;
     padding: 0;
     margin: 0;
     display: flex;
-    background-color: #343A40;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
 }
 
-.admincp_menu a,
-.admincp_menu li {
-    display: flex;
+.main_menu img {
+    width: 100%;
+    height: auto;
+}
+
+.main_menu a,
+.main_menu li {
+    position: relative;
     text-decoration: none;
-    color: aliceblue;
-    padding: 10px 10px;
+    list-style: none;
+    color: rgb(255, 255, 255);
+    display: block;
 }
 
-.admincp_menu a:hover {
+.main_menu li {
+    width: 100%;
+}
+
+.main_menu a {
+    width: 95%;
+    padding: 15px 0;
+    padding-left: 5%;
+}
+
+.main_menu a:hover {
     background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
     font-weight: bolder;
+    width: 95%;
+}
+
+li:hover .child_menu {
+    display: flex !important;
+    flex-direction: column;
+    margin-left: 10%;
+}
+
+.child_menu {
+    display: none;
+    flex-direction: column;
+    margin-left: 10%;
+}
+
+.admin_content {
+    width: 75%;
+    margin-left: 20%;
+    padding-left: 5%;
+    padding-top: 20px;
+    top: 0;
+    padding-bottom: 5%;
+}
+
+.sanpham {
+    display: none;
 }
 
 .data_table {
@@ -100,7 +155,7 @@ td.tacvu {
 }
 
 td img {
-    width: 50%;
+    width: 100%;
 }
 
 td textarea {
@@ -116,4 +171,8 @@ input.upload_img {
 
 img#view_img {
     width: 150px;
+}
+
+.Pagination {
+    padding-top: 20px;
 }

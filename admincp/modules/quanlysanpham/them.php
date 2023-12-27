@@ -1,6 +1,7 @@
 
 <p class="pagename">THÊM SẢN PHẨM</p>
-<div class="wrapper">
+<button name="show_themsp" onclick="show_themsp()">Show</button>
+<div class="wrapper sanpham" style="display:none;">
     <form action="modules/quanlysanpham/xuly.php" method="post" enctype="multipart/form-data">
         <table class="data_table">
             <tr>
@@ -88,5 +89,16 @@
                 img_preview_cell.innerHTML = '<img src="' + e.target.result + '">';
             }
             reader.readAsDataURL(input.files[0]);
+    }
+    let bool_themsp = 0;
+    function show_themsp(){
+        bool_themsp = !bool_themsp;
+        var elements = document.querySelector('.sanpham');
+        if(bool_themsp){
+            elements.style.display = 'none';
+        }
+        else{
+            elements.style.display = 'flex';
+        }
     }
 </script>

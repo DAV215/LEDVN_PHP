@@ -1,26 +1,112 @@
 <p class="pagename">THỐNG KÊ SẢN PHẨM</p>
 
 <?php
-    
-    if(isset($_POST['filter_active_btn'])){
-        $noibat = $_POST['noibat'];
-        if($_POST['danhmuc']== "ALL"){
-            $sql_lietke_sp = "SELECT * FROM tbl_sanpham  WHERE  noibat = '".$noibat."'  ORDER BY id_sanpham DESC";
+//Check nut nhan bo loc
+    if(isset($_POST['SP_filter_active_btn']) || isset($filter["active"])){
+        if(isset($_POST['page'])){
+            $_SESSION['SP_filter'][3] =  $_POST['page'];
+        }
+        else $_SESSION['SP_filter'] = array(1, $_POST['danhmuc'], $_POST['noibat'], 0);
+    }
+    else{
+        if(isset($_POST['page'])){
+            $_SESSION['SP_filter'][3] =  $_POST['page'];
+        }
+        else $_SESSION['SP_filter'] = array(0, "all", 0, $_POST['page']);
+    }
+//Check Session dajng loc
+    if(isset( $_SESSION['SP_filter'])){
+        if(isset($_POST['page'])){
+            $_SESSION['SP_filter'][3] =  $_POST['page'];
+        }
+        $filter = array("active" => $_SESSION['SP_filter'][0], "danhmuc" => $_SESSION['SP_filter'][1], "noibat" => $_SESSION['SP_filter'][2], "page" => $_SESSION['SP_filter'][3]);
+    }
+    else{
+        $_SESSION['SP_filter'] = array(0, "all", 0, 0);
+        $filter = array("active" => $_SESSION['SP_filter'][0], "danhmuc" => $_SESSION['SP_filter'][1], "noibat" => $_SESSION['SP_filter'][2], $_SESSION['SP_filter'][2]);
+    }
+    if($filter["active"]){
+        if($filter['danhmuc']== "ALL"){
+            if( $filter["noibat"]==1){
+                $sql_lietke_allsp = "SELECT * FROM tbl_sanpham WHERE noibat = '".$filter['noibat']."'  ORDER BY id_sanpham DESC";
+                $query_lietke_allsp = mysqli_query($mysqli, $sql_lietke_allsp);
+                $number_of_product = mysqli_num_rows($query_lietke_allsp);
+                if(!isset( $filter["page"])){
+                    $sql_lietke_sp = "SELECT * FROM tbl_sanpham WHERE noibat = '".$filter['noibat']."'  LIMIT 0,5 ";
+                    $query_lietke_sp = mysqli_query($mysqli, $sql_lietke_sp);
+                }
+                else{
+                    $pro_start = $filter["page"]*5;
+                    $sql_lietke_sp = "SELECT * FROM tbl_sanpham WHERE noibat = '".$filter['noibat']."'  LIMIT $pro_start,5 ";
+                    $query_lietke_sp = mysqli_query($mysqli, $sql_lietke_sp);
+                }
+            }
+            else{
+                $sql_lietke_allsp = "SELECT * FROM tbl_sanpham  ORDER BY id_sanpham DESC";
+                $query_lietke_allsp = mysqli_query($mysqli, $sql_lietke_allsp);
+                $number_of_product = mysqli_num_rows($query_lietke_allsp);
+                if(!isset( $filter["page"])){
+                    $sql_lietke_sp = "SELECT * FROM tbl_sanpham  LIMIT 0,5 ";
+                    $query_lietke_sp = mysqli_query($mysqli, $sql_lietke_sp);
+                }
+                else{
+                    $pro_start = $filter["page"]*5;
+                    $sql_lietke_sp = "SELECT * FROM tbl_sanpham  LIMIT $pro_start,5 ";
+                    $query_lietke_sp = mysqli_query($mysqli, $sql_lietke_sp);
+                }
+            }
         }
         else{
-            $sql_lietke_sp = "SELECT * FROM tbl_sanpham WHERE danhmucsanpham = '".$_POST['danhmuc']."' AND noibat = '".$noibat."'  ORDER BY id_sanpham DESC";
+            if( $filter["noibat"]==1){
+                $sql_lietke_allsp = "SELECT * FROM tbl_sanpham WHERE noibat = '".$filter['noibat']."' AND danhmucsanpham = '".$filter['danhmuc']."'  ORDER BY id_sanpham DESC";
+                $query_lietke_allsp = mysqli_query($mysqli, $sql_lietke_allsp);
+                $number_of_product = mysqli_num_rows($query_lietke_allsp);
+                if(!isset($_POST['page'])){
+                    $sql_lietke_sp = "SELECT * FROM tbl_sanpham WHERE noibat = '".$filter['noibat']."' AND danhmucsanpham = '".$filter['danhmuc']."'  LIMIT 0,5 ";
+                    $query_lietke_sp = mysqli_query($mysqli, $sql_lietke_sp);
+                }
+                else{
+                    $pro_start = $_POST['page']*5;
+                    $sql_lietke_sp = "SELECT * FROM tbl_sanpham WHERE noibat = '".$filter['noibat']."' AND danhmucsanpham = '".$filter['danhmuc']."'  LIMIT $pro_start,5 ";
+                    $query_lietke_sp = mysqli_query($mysqli, $sql_lietke_sp);
+                }
+            }
+            else{
+                $sql_lietke_allsp = "SELECT * FROM tbl_sanpham WHERE danhmucsanpham = '".$filter['danhmuc']."' ORDER BY id_sanpham DESC";
+                $query_lietke_allsp = mysqli_query($mysqli, $sql_lietke_allsp);
+                $number_of_product = mysqli_num_rows($query_lietke_allsp);
+                if(!isset($_POST['page'])){
+                    $sql_lietke_sp = "SELECT * FROM tbl_sanpham WHERE danhmucsanpham = '".$filter['danhmuc']."' LIMIT 0,5 ";
+                    $query_lietke_sp = mysqli_query($mysqli, $sql_lietke_sp);
+                }
+                else{
+                    $pro_start = $_POST['page']*5;
+                    $sql_lietke_sp = "SELECT * FROM tbl_sanpham WHERE danhmucsanpham = '".$filter['danhmuc']."' LIMIT $pro_start,5 ";
+                    $query_lietke_sp = mysqli_query($mysqli, $sql_lietke_sp);
+                }
+            }
         }
-        $query_lietke_sp = mysqli_query($mysqli, $sql_lietke_sp);
-    }else{
-        $sql_lietke_sp = "SELECT * FROM tbl_sanpham ORDER BY id_sanpham DESC";
-        $query_lietke_sp = mysqli_query($mysqli, $sql_lietke_sp);
     }
-    $number_of_product = mysqli_num_rows($query_lietke_sp);
+    else{
+        $sql_lietke_allsp = "SELECT * FROM tbl_sanpham ORDER BY id_sanpham";
+        $query_lietke_allsp = mysqli_query($mysqli, $sql_lietke_allsp);
+        $number_of_product = mysqli_num_rows($query_lietke_allsp);
+        if(!isset($_POST['page'])){
+            $sql_lietke_sp = "SELECT * FROM tbl_sanpham  LIMIT 0,5 ";
+            $query_lietke_sp = mysqli_query($mysqli, $sql_lietke_sp);
+        }
+        else{
+            $pro_start = $_POST['page']*5;
+            $sql_lietke_sp = "SELECT * FROM tbl_sanpham  LIMIT $pro_start,5 ";
+            $query_lietke_sp = mysqli_query($mysqli, $sql_lietke_sp);
+        }
+    }
 ?>
 <table class="data_table">
     <form action="" id="filter_data" method="POST">
         <tr>
-            <button class="filter_active_btn" name = "filter_active_btn">Bật bộ lọc</button>
+            <button class="filter_active_btn" name = "SP_filter_active_btn" value="1">Bật bộ lọc</button>
+            <button class="filter_active_btn" name = "SP_filter_active_btn" value="0">Tắt bộ lọc</button>
         </tr>
         <tr>
             <th>ID</th>
@@ -60,7 +146,10 @@
         </tr>
     </form>
     <?php
-        $i = 0;
+        if(isset($_POST['page'])){
+            $i = $_POST['page']*5;
+        }
+        else $i = 0;
         while ($row = mysqli_fetch_array($query_lietke_sp)) {
             $i++;
     ?>
@@ -107,9 +196,9 @@
     ?>
 </table>
 <div class="Pagination">
-    <form action="" method="POST">
+    <form action="admincp_index.php?action=quanlysanpham&query=them" method="POST">
         <?php
-            $number_pages = ceil($number_of_product / 6);
+            $number_pages = ceil($number_of_product / 5);
             for ($i =0; $i < $number_pages; $i++) {
                 echo '<button type="submit" name = "page" value = "'.$i.'">'.$i.'</button>';
             }
