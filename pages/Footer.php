@@ -92,7 +92,7 @@
                 </div>
                 <div class="footer_col_content">
                     <div class="inputmail">
-                        <button><a href="pages/main/login.php">Đăng ký ngay</a></button>
+                        <button><a href="pages/main/signin.php">Đăng ký ngay</a></button>
                     </div>
                     <div class="fanpage">
                         <h2>Fanpage</h2>

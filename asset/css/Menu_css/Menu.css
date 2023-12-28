@@ -185,12 +185,18 @@
         width: 100%;
         outline: none;
         border: none;
-        border-radius: 10px;
+        border-radius: 0;
         padding: 0 !important;
         margin: 0 !important;
+        margin-left: 10% !important;
+        margin-bottom: 10px !important;
+        background: none;
+        border-bottom: solid 2px #ccc;
+        font-size: 1rem;
+        color: #ffff;
     }
     .search button {
-        position: relative;
+        /* position: relative;
         height: 80%;
         font-size: 16px;
         font-family: 'Quicksand', sans-serif !important;
@@ -199,7 +205,8 @@
         padding: 0 !important;
         margin: 0 !important;
         background-color: transparent;
-        right: 50%;
+        right: 50%; */
+        display: none;
     }
     .search:hover button {
         border-radius: 0;

@@ -16,5 +16,5 @@
     $mail->Body = str_replace('$name', $name, $mail->Body);
     $mail->Body = str_replace('$pass', $pass, $mail->Body);
     $mail->send();
-    header('Location: ../pages/main/login.php');
+    header('Location: ../pages/main/signup.php');
 ?>

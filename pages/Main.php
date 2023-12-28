@@ -11,10 +11,10 @@
             if($tam == 'trangchu'){
                 include('pages/main/trangchu.php');
             }
-            if($tam == 'danhmucsanpham'){
+            elseif($tam == 'danhmucsanpham'){
                 include('pages/main/danhmuc.php');
             }
-            if($tam == 'chitietsp'){
+            elseif($tam == 'chitietsp'){
                 include('pages/main/sanpham.php');
             }
             elseif($tam == 'giohang'){
@@ -42,7 +42,7 @@
                 include('pages/main/giohang.php');
             }
             elseif($tam == 'dangnhap'){
-                echo "<script>window.location.href='pages/main/login.php'</script>";
+                echo "<script>window.location.href='pages/main/signup.php'</script>";
 
             }
             elseif($tam == 'dangxuat'){
@@ -55,6 +55,9 @@
             }
             elseif($tam == 'camon'){
                 include('pages/main/camon.php');
+            }
+            else{
+                include('pages/main/trangchu.php');
             }
         ?>
     </div>

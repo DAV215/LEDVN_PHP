@@ -50,6 +50,7 @@ html {
 .product_list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .product_list ul,
@@ -63,7 +64,6 @@ html {
 .product_list li:hover {
     transform: translateY(-70px);
     transition: 0.5s;
-    margin: 50px;
 }
 
 .product_list li:hover button {
@@ -72,7 +72,7 @@ html {
 }
 
 .product_item {
-    margin: 20px 50px 70px 50px;
+    margin: 20px 20px 70px 20px;
     width: 300px;
     height: 450px;
     background-color: #8b808024;
@@ -189,7 +189,7 @@ html {
     font-weight: 900;
     font-family: 'Quicksand', sans-serif !important;
     font-size: larger;
-    margin-left: calc(50% - 110px);
+    margin-left: calc(50% - 150px + 95px);
 }
 
 .more_products a {
@@ -409,6 +409,8 @@ input.del_item:hover {
     .product_list {
         padding: 0;
         justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
     }
     .more_products {
         margin-left: calc((100% - 150px)/2);

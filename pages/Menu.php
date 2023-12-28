@@ -72,7 +72,7 @@
 <div class="menu moblie" id="menu_mb">
     <li class="search">
         <form action="index.php?quanly=timkiem" method="post">
-            <input type="search"  id="" name="search_content">
+            <input type="search"  id="" name="search_content" placeholder="Tìm kiếm">
             <button type="submit">Search</button>
             <!-- <a href="index.php?quanly=timkiem" name=""><i class="fa-solid fa-magnifying-glass"></i></a> -->
         </form>
