@@ -5,11 +5,12 @@
     $sql_cmd = "SELECT * FROM tbl_sanpham WHERE noibat = 1 ORDER BY id_sanpham DESC";
     $sql_query = mysqli_query($mysqli, $sql_cmd);
 ?>
-
+<div class="content">
+    <?php include('Tryneon/designdemo.php'); ?>
+</div>
 <div class="content">
     <h1 style = "margin:5%;">Sản phẩm nổi bật</h1>
     <div class="list_product_noibat">
-        
         <?php 
         $item_stt = 0;
         while ($row = mysqli_fetch_array($sql_query)) {

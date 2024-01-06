@@ -25,7 +25,7 @@
             include("pages\Header.php");
             include("pages\Menu.php");
             include("pages\Main.php");
-            include("pages\Footer.php");
+            // include("pages\Footer.php");
         ?>
     </div>
 </body>
