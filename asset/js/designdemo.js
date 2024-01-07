@@ -2,36 +2,76 @@ var default_move_bool = new Array(0, 0, 0);
 var default_fontType_bool, default_fontSize_bool, default_color_bool;
 
 function move_demo(ID_ELEMENT) {
-
     var isDragging = false;
     var offsetX, offsetY;
 
     var element = document.getElementById(ID_ELEMENT);
     var parent = document.getElementById('khungdemo');
-    element.addEventListener('mousedown', function(e) {
+
+    function handleStart(e) {
         isDragging = true;
-        offsetX = element.offsetLeft - e.clientX;
-        offsetY = element.offsetTop - e.clientY;
-    });
-    document.addEventListener('mousemove', function(e) {
+
+        var clientX, clientY;
+
+        if (e.type === 'touchstart') {
+            clientX = e.touches[0].clientX;
+            clientY = e.touches[0].clientY;
+        } else if (e.type === 'mousedown') {
+            clientX = e.clientX;
+            clientY = e.clientY;
+        }
+
+        offsetX = element.offsetLeft - clientX;
+        offsetY = element.offsetTop - clientY;
+
+        if (ID_ELEMENT == 'nd1') default_move_bool[0] = 1;
+        // Add similar conditions for other elements if needed
+    }
+
+    function handleMove(e) {
         if (isDragging) {
-            if (ID_ELEMENT == 'nd1') default_move_bool[0] = 1;
-            if (ID_ELEMENT == 'nd2') default_move_bool[1] = 1;
-            if (ID_ELEMENT == 'nd3') default_move_bool[2] = 1;
-            var x = e.clientX + offsetX;
-            var y = e.clientY + offsetY;
+            e.preventDefault(); // Prevent scrolling on touch devices
+
+            var clientX, clientY;
+
+            if (e.type === 'touchmove') {
+                clientX = e.touches[0].clientX;
+                clientY = e.touches[0].clientY;
+            } else if (e.type === 'mousemove') {
+                clientX = e.clientX;
+                clientY = e.clientY;
+            }
+
+            var x = clientX + offsetX;
+            var y = clientY + offsetY;
+
             x = Math.min(Math.max(x, 0), parent.clientWidth - element.clientWidth);
             y = Math.min(Math.max(y, 0), parent.clientHeight - element.clientHeight);
+
             element.style.left = x + 'px';
             element.style.top = y + 'px';
         }
-    });
+    }
 
-    document.addEventListener('mouseup', function() {
+    function handleEnd() {
         isDragging = false;
-    });
+    }
+
+    // Event listeners for both touch and mouse events
+    element.addEventListener('mousedown', handleStart);
+    element.addEventListener('touchstart', handleStart);
+
+    document.addEventListener('mousemove', handleMove);
+    document.addEventListener('touchmove', handleMove, { passive: false });
+
+    document.addEventListener('mouseup', handleEnd);
+    document.addEventListener('touchend', handleEnd);
+
     DrawSizebore();
 }
+
+
+
 
 function check_default_move_bool() {
     if (default_move_bool.every(value => value === 0)) {
@@ -186,12 +226,17 @@ function default_Design(fontSize_, fontType, color) {
     updatefont(fontType);
     updateFontSize_(fontSize_);
     check_default_move_bool();
+    let mousedownEvent = new MouseEvent("mousedown");
+    let mousemoveEvent = new MouseEvent("mousemove");
+    let mouseupEvent = new MouseEvent("mouseup");
+    document.getElementById('nd3').dispatchEvent(mousedownEvent);
+    document.getElementById('nd3').dispatchEvent(mousemoveEvent);
+    document.getElementById('nd3').dispatchEvent(mouseupEvent);
     DrawSizebore();
-    move_demo('nd3');
 }
 
 function color_ofButton() {
-    var parentclass_ofbtn = document.querySelector(".btn");
+    let parentclass_ofbtn = document.querySelector(".btn");
     var buttons = parentclass_ofbtn.getElementsByTagName("button");
     var buttonArray = Array.from(buttons);
     buttonArray.forEach(element => {
@@ -381,6 +426,15 @@ function direct_main_action_mb(CLASS_SHOW, ID_BTN) {
     document.querySelector('.glider').style.left = left + 'px';
     document.querySelector('.glider').style.width = Math.ceil(width * 0.7) + 'px';
 }
+//gia lap e cap nhat kích thuoc
+function move_nd3() {
+    let mousedownEvent = new MouseEvent("mousedown");
+    let mousemoveEvent = new MouseEvent("mousemove");
+    let mouseupEvent = new MouseEvent("mouseup");
+    document.getElementById('nd3').dispatchEvent(mousedownEvent);
+    document.getElementById('nd3').dispatchEvent(mousemoveEvent);
+    document.getElementById('nd3').dispatchEvent(mouseupEvent);
+}
 //mobile
 function updatefont_mb_() {
     let all_btn = document.querySelectorAll('.mb.font_box button');
@@ -394,7 +448,7 @@ if (window.innerWidth < 900) {
     default_Design(15, "Font1", "Orange_color");
 } else
     default_Design(30, "Font1", "Orange_color");
-DrawSizebore();
+window.onload = move_nd3;
 font_ofButton();
 updatefont_mb_();
 update_content("nd1_content", "nd1");

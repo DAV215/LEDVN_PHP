@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="asset/css/Tryneon/designdemo.css">
 <div class=" designdemo" >
     <div class="show_demo" id="khungdemo">
-        <div id="nd1" class="content_design" draggable="true" onmousedown="move_demo('nd1')">Neon và Bảng hiệu</div>
-        <div id="nd2" class="content_design" draggable="true" onmousedown="move_demo('nd2')">.</div>
-        <div id="nd3" class="content_design" draggable="true" onmousedown="move_demo('nd3')">LEDVN</div>
+        <div id="nd1" class="content_design" draggable="true" onmousedown="move_demo('nd1')" ontouchstart="move_demo('nd1')">Neon và Bảng hiệu</div>
+        <div id="nd2" class="content_design" draggable="true" onmousedown="move_demo('nd2')" ontouchstart="move_demo('nd2')">.</div>
+        <div id="nd3" class="content_design" draggable="true" onmousedown="move_demo('nd3')" ontouchstart="move_demo('nd3')">LEDVN</div>
         <div id="showSizeText">
             <div class="right">
                 <span class="firt border"></span>
