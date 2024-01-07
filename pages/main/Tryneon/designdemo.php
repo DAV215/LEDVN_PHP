@@ -22,9 +22,9 @@
             
             <div class="action_demo_menu_child">
             <h1>Nội dung</h1>
-                <input type="text" placeholder="Dòng 1" id="nd1_content" value="Quảng cáo LEDVN" oninput="update_content('nd1_content','nd1');">
-                <input type="text" placeholder="Dòng 2" id="nd2_content" value="" oninput="update_content('nd2_content','nd2');">
-                <input type="text" placeholder="Dòng 3" id="nd3_content" value="Neon và Bảng hiệu" oninput="update_content('nd3_content','nd3');">
+                <input type="text" placeholder="Nội dung dòng 1" id="nd1_content" value="Neon và bảng hiệu" oninput="update_content('nd1_content','nd1');">
+                <input type="text" placeholder="Nội dung dòng 2" id="nd2_content" value="" oninput="update_content('nd2_content','nd2');">
+                <input type="text" placeholder="Nội dung dòng 3" id="nd3_content" value="LEDVN" oninput="update_content('nd3_content','nd3');">
             </div>
             
             <div class="action_demo_menu_child">
@@ -75,9 +75,9 @@
         <div class="glider"></div>
         <div class="main_action_mb">
             <div class="action_demo_menu_child mb content_box">
-                <input type="text" placeholder="Dòng 1" id="nd1_content_mb" value="Quảng cáoo" oninput="update_content('nd1_content_mb','nd1');">
-                <input type="text" placeholder="Dòng 2" id="nd2_content_mb" value="&" oninput="update_content('nd2_content_mb','nd2');">
-                <input type="text" placeholder="Dòng 3" id="nd3_content_mb" value="LEDVN" oninput="update_content('nd3_content_mb','nd3');">
+                <input type="text" placeholder="Nội dung dòng 1" id="nd1_content_mb"  oninput="update_content('nd1_content_mb','nd1');">
+                <input type="text" placeholder="Nội dung dòng 2" id="nd2_content_mb"  oninput="update_content('nd2_content_mb','nd2');">
+                <input type="text" placeholder="Nội dung dòng 3" id="nd3_content_mb"  oninput="update_content('nd3_content_mb','nd3');">
             </div>
             
             <div class="action_demo_menu_child mb btn_Select_Color color_box">

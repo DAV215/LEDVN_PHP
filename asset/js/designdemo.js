@@ -50,11 +50,16 @@ function move_demo(ID_ELEMENT) {
 
             element.style.left = x + 'px';
             element.style.top = y + 'px';
+            DrawSizebore();
+
         }
+        DrawSizebore();
+
     }
 
     function handleEnd() {
         isDragging = false;
+        DrawSizebore();
     }
 
     // Event listeners for both touch and mouse events
@@ -226,12 +231,12 @@ function default_Design(fontSize_, fontType, color) {
     updatefont(fontType);
     updateFontSize_(fontSize_);
     check_default_move_bool();
-    let mousedownEvent = new MouseEvent("mousedown");
-    let mousemoveEvent = new MouseEvent("mousemove");
-    let mouseupEvent = new MouseEvent("mouseup");
-    document.getElementById('nd3').dispatchEvent(mousedownEvent);
-    document.getElementById('nd3').dispatchEvent(mousemoveEvent);
-    document.getElementById('nd3').dispatchEvent(mouseupEvent);
+    // let mousedownEvent = new MouseEvent("mousedown");
+    // let mousemoveEvent = new MouseEvent("mousemove");
+    // let mouseupEvent = new MouseEvent("mouseup");
+    // document.getElementById('nd3').dispatchEvent(mousedownEvent);
+    // document.getElementById('nd3').dispatchEvent(mousemoveEvent);
+    // document.getElementById('nd3').dispatchEvent(mouseupEvent);
     DrawSizebore();
 }
 
@@ -297,6 +302,7 @@ function DrawSizebore() {
         let top = ID.offsetTop;
         return Array(width, height, left, top);
     }
+    let action_demo_menu_PC = document.getElementsByClassName('action_demo_menu').length > 0;
     if (check_input_null('nd3') == false) {
         document.getElementById('nd2').style.display = 'block';
         document.querySelector('#showSizeText .bottom .firt.border').style.display = 'block';
@@ -446,9 +452,9 @@ function updatefont_mb_() {
 
 if (window.innerWidth < 900) {
     default_Design(15, "Font1", "Orange_color");
+    // window.onload = move_nd3;
 } else
     default_Design(30, "Font1", "Orange_color");
-window.onload = move_nd3;
 font_ofButton();
 updatefont_mb_();
 update_content("nd1_content", "nd1");
