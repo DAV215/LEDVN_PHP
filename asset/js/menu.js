@@ -3,7 +3,7 @@ document.addEventListener("scroll", function() {
     var menuMb = document.getElementById("menu_mb");
     var contentMenuMobile = document.getElementById("content_menu_moblie");
 
-    if (window.scrollY >= 50) {
+    if (window.scrollY >= 300) {
         menu.classList.add("fixed");
         menuMb.classList.add("fixed");
         contentMenuMobile.classList.add("fixed");

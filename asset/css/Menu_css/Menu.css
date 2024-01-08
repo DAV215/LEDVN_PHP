@@ -1,5 +1,5 @@
 .menu {
-    position: fixed;
+    position: sticky;
     z-index: 99 !important;
     height: 40px;
     width: 100%;
@@ -96,9 +96,21 @@
     width: 100%;
     outline: none;
     border: none;
-    border-radius: 10px;
     padding: 0 !important;
     margin: 0 !important;
+    background: none;
+    border-bottom: solid 2px white;
+    color: #ccc;
+}
+
+.search input::placeholder {
+    font-family: 'Quicksand', sans-serif !important;
+    color: white;
+}
+
+.search input::-webkit-input-placeholder {
+    font-family: 'Quicksand', sans-serif !important;
+    color: #ccc;
 }
 
 .search button {
@@ -113,6 +125,7 @@
     margin: 0 !important;
     transform: translateX(-100%);
     background-color: transparent;
+    display: none;
 }
 
 .search a {
@@ -213,7 +226,7 @@
     }
     #content_menu_moblie.show {
         display: flex;
-        position: fixed;
+        position: absolute;
         flex-direction: column;
         padding: 10px 20px;
         background-color: #343A40;
