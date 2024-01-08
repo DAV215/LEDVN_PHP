@@ -205,8 +205,6 @@ html {
     text-shadow: rgb(255, 255, 255) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 10px, rgb(225, 227, 230) 0px 0px 20px, rgb(225, 227, 230) 0px 0px 30px, rgb(225, 227, 230) 0px 0px 40px, rgb(225, 227, 230) 0px 0px 55px, rgb(225, 227, 230) 0px 0px 75px;
 }
 
-.border {}
-
 #showSizeText .value {
     font-family: 'Quicksand', sans-serif !important;
     font-size: 18px;
@@ -308,7 +306,6 @@ html {
         font-weight: bolder;
         border: none;
     }
-    .nav_action_mb button:hover {}
     .action_demo_menu_child.mb {
         display: none;
         align-items: center;
