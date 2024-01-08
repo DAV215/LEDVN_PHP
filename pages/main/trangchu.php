@@ -9,7 +9,7 @@
     <?php include('Tryneon/designdemo.php'); ?>
 </div>
 <div class="content">
-    <h1 style = "margin:5%;">Sản phẩm nổi bật</h1>
+    <h1 class="name_of_hangmuc" style = "margin:5%;">Sản phẩm nổi bật</h1>
     <div class="list_product_noibat">
         <?php 
         $item_stt = 0;
@@ -39,7 +39,7 @@
 </div>
 <?php include('pages/main/index.php');?>
 <div class="content">
-    <h1 style="margin-left:5%;">Bài viết nổi bật</h1>
+    <h1 class="name_of_hangmuc" style="margin-left:5%;">Bài viết nổi bật</h1>
     <div class="list_product_noibat">
         <?php 
             $sql_cmd = "SELECT * FROM tbl_baiviet ORDER BY id_baiviet DESC";
@@ -72,7 +72,7 @@
 </div>
 
 <div class="content">
-    <h1>Đối tác</h1>
+    <h1 class="name_of_hangmuc">Đối tác</h1>
     <div class="partner">
         <img src="asset/images/Partner/FF.jpg" alt="">
         <img src="asset/images/Partner/TA.jpg" alt="">
@@ -80,3 +80,4 @@
     </div>
 </div>
 <script src="asset/js/product_noibat.js"></script>
+<script src="asset/js/animation_for_Indexpage.js"></script>

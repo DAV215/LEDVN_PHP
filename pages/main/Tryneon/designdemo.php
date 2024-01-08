@@ -1,3 +1,6 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
 <link rel="stylesheet" href="asset/css/Tryneon/designdemo.css">
 <div class=" designdemo" >
     <div class="show_demo" id="khungdemo">

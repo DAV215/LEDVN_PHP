@@ -35,41 +35,6 @@ html {
     z-index: 0;
 }
 
-
-/* .menu {
-    position: sticky;
-    z-index: 99 !important;
-    height: 40px;
-    padding: 0;
-    padding-left: calc(15% - 40px);
-    margin: 0;
-    display: flex;
-    background-color: #343A40;
-    justify-content: left;
-    align-items: center;
-}
-
-.menu ul {
-    margin: 0;
-    color: #5C5757;
-    list-style: none;
-    display: flex;
-}
-
-.menu a {
-    text-decoration: none;
-    color: #ccc;
-    padding: 10px 20px;
-    line-height: 40px;
-    justify-content: center;
-    align-items: center;
-}
-
-.menu a:hover {
-    background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
-    font-weight: bolder;
-} */
-
 .sidebar {
     position: absolute;
     width: 15%;

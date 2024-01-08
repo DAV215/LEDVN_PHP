@@ -302,7 +302,6 @@ function DrawSizebore() {
         let top = ID.offsetTop;
         return Array(width, height, left, top);
     }
-    let action_demo_menu_PC = document.getElementsByClassName('action_demo_menu').length > 0;
     if (check_input_null('nd3') == false) {
         document.getElementById('nd2').style.display = 'block';
         document.querySelector('#showSizeText .bottom .firt.border').style.display = 'block';

@@ -2,18 +2,15 @@
 <?php 
     $sql_get_data_danhmuc = "SELECT * FROM tbl_danhmuc ORDER BY id_danhmuc ASC ";
     $data_danhmuc = mysqli_query($mysqli, $sql_get_data_danhmuc);
-
-
-    // while ($row_sanpham = mysqli_fetch_array($data_sanpham)) {}
 ?>
 
 <div class="content">
     <?php
     while ($row_danhmuc = mysqli_fetch_array($data_danhmuc)){
     ?>
-        <div class = "tendanhmuc">
-            <p style="font-weight: 900;"><?php echo $row_danhmuc['tendanhmuc'] ?> </p>
-        </div>
+    <div class="list">
+        <h1 class="name_of_hangmuc" style = "margin:5%;"><?php echo $row_danhmuc['tendanhmuc'] ?></h1>
+
         <ul class="product_list">
             <?php
             $sql_get_data_sanpham = "SELECT * FROM tbl_sanpham
@@ -46,6 +43,8 @@
             }
             ?>
         </ul>
+    </div>
+
         <button class="more_products"><a href="index.php?quanly=danhmucsanpham&id=<?php echo $row_danhmuc['tendanhmuc'] ?>">Xem thêm</a></button>
 
     <?php

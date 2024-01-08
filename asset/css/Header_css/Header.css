@@ -1,4 +1,4 @@
-/* .header {
+.header {
     height: 300px;
     display: flex;
     background-color: #5B5656;
@@ -11,4 +11,11 @@
     width: auto;
     transform: scale(1.5);
     z-index: 0;
+}
+
+
+/* .logo_outline {
+    position: relative;
+    max-width: 80%;
+    height: auto;
 } */
