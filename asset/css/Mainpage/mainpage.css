@@ -44,6 +44,10 @@ html {
     float: left;
 }
 
+.sidebar_main {
+    position: relative;
+}
+
 .sidebar-name h1 {
     font-size: medium;
     padding: 0;
