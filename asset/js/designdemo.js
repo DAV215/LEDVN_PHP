@@ -87,7 +87,7 @@ function check_default_move_bool() {
         let nd3 = document.getElementById("nd3");
         let left_ = khungdemo.offsetWidth * 0.4 - nd1.offsetWidth / 2;
         let top_ = khungdemo.offsetHeight * 0.1 + 50;
-        let FontSize = document.getElementById("FontSize").value / 100 + 1;
+        let FontSize = 18 / 100 + 1;
         if (default_move_bool.every(value => value === 0)) {
             nd1.style.left = left_ + 'px';
             nd1.style.top = top_ + 'px';
@@ -157,8 +157,12 @@ function updatefont(fontName) {
     now_font = fontName;
     // Set the font family for the target element
     parent_id_content.style.fontFamily = fontName;
-    BTN_shormore_Font.style.fontFamily = fontName;
-    showFontName_BTN_SHOWMORE.innerHTML = fontName;
+    //Sẽ ẩn và kh tìm ra 2 I này nếu kh Login
+    if (BTN_shormore_Font || showFontName_BTN_SHOWMORE) {
+        BTN_shormore_Font.style.fontFamily = fontName;
+        showFontName_BTN_SHOWMORE.innerHTML = fontName;
+    }
+
     updatefont_('fontName_BTN', now_font);
     DrawSizebore();
 
@@ -178,7 +182,11 @@ function updatefont_(ID_element, fontName) {
     document.head.appendChild(styleElement);
 
     // Set the font family for the target element
-    parent_id_content.style.fontFamily = fontName;
+    //Sẽ ẩn và kh tìm ra 2 I này nếu kh Login
+    if (parent_id_content) {
+        parent_id_content.style.fontFamily = fontName;
+
+    }
 }
 
 var showmoreFont_btn = false;
@@ -231,12 +239,6 @@ function default_Design(fontSize_, fontType, color) {
     updatefont(fontType);
     updateFontSize_(fontSize_);
     check_default_move_bool();
-    // let mousedownEvent = new MouseEvent("mousedown");
-    // let mousemoveEvent = new MouseEvent("mousemove");
-    // let mouseupEvent = new MouseEvent("mouseup");
-    // document.getElementById('nd3').dispatchEvent(mousedownEvent);
-    // document.getElementById('nd3').dispatchEvent(mousemoveEvent);
-    // document.getElementById('nd3').dispatchEvent(mouseupEvent);
     DrawSizebore();
 }
 
@@ -252,12 +254,16 @@ function color_ofButton() {
 
 function font_ofButton() {
     let parentclass_ofbtn = document.querySelector(".font_More");
-    let buttons = parentclass_ofbtn.getElementsByTagName("button");
-    let buttonArray = Array.from(buttons);
-    buttonArray.forEach(element => {
-        let button_id = element.id;
-        updatefont_(button_id, button_id);
-    });
+    //Sẽ ẩn và kh tìm ra 2 I này nếu kh Login
+    if (parentclass_ofbtn) {
+        let buttons = parentclass_ofbtn.getElementsByTagName("button");
+        let buttonArray = Array.from(buttons);
+        buttonArray.forEach(element => {
+            let button_id = element.id;
+            updatefont_(button_id, button_id);
+        });
+    }
+
 }
 
 function font_ofButton_mb() {
@@ -419,13 +425,20 @@ function DrawSizebore() {
 
 //mobile
 function direct_main_action_mb(CLASS_SHOW, ID_BTN) {
+
+    var user_login = "<?php echo $_SESSION['user_login']; ?>";
     let all_btn = document.querySelectorAll('.main_action_mb .action_demo_menu_child');
     all_btn.forEach(element => {
         element.style.display = 'none';
     });
+    if (user_login) {
+        let show_class = document.querySelector(CLASS_SHOW);
+        show_class.style.display = 'flex';
+    } else {
+        let show_class = document.querySelector('.mb.none_login');
+        show_class.style.display = 'flex';
+    }
 
-    let show_class = document.querySelector(CLASS_SHOW);
-    show_class.style.display = 'flex';
     let left = document.getElementById(ID_BTN).offsetLeft;
     let width = document.getElementById(ID_BTN).offsetWidth;
     document.querySelector('.glider').style.left = left + 'px';
