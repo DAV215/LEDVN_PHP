@@ -10,7 +10,7 @@ html {
 }
 
 .designdemo {
-    padding-top: 50px;
+    padding-top: 0px;
     width: 100%;
     transform: translateX(40%);
     transform: translateY(20px);
@@ -255,7 +255,7 @@ html {
 
 @media only screen and (max-width: 900px) {
     .designdemo {
-        padding-top: 50px;
+        padding-top: 0px;
         width: 90%;
         transform: translateX(5%);
         height: 600px;

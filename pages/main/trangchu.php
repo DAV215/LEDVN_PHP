@@ -6,6 +6,7 @@
     $sql_query = mysqli_query($mysqli, $sql_cmd);
 ?>
 <div class="content">
+    <h1 class="name_of_hangmuc" style = "margin:5%;">Thiết kế neon </h1>
     <?php include('Tryneon/designdemo.php'); ?>
 </div>
 <div class="content">
