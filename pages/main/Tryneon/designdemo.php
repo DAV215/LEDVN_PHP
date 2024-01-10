@@ -114,7 +114,7 @@
             }else{
                 echo '
                     <div class="nav_action_mb">
-                        <button id="select_content_action" onclick="direct_main_action_mb(\'.mb.none_login\', \'select_content_action\' )">Nội dung</button>
+                        <button id="select_content_action" onclick="direct_main_action_mb(\'.mb.content_box\', \'select_content_action\' )">Nội dung</button>
                         <button id="select_color_action"   onclick="direct_main_action_mb(\'.mb.none_login\', \'select_color_action\')">Màu sắc</button>
                         <button id="select_size_action"   onclick="direct_main_action_mb(\'.mb.none_login\', \'select_size_action\')">Kích thước</button>
                         <button id="select_font_action"   onclick="direct_main_action_mb(\'.mb.none_login\', \'select_font_action\')">Font chữ</button>
