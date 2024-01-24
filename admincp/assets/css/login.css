@@ -74,3 +74,23 @@ p.box_name {
     background-position: right center;
     font-size: 20px;
 }
+
+@media only screen and (max-width: 900px) {
+    .wraper {
+        position: relative;
+        width: 100%;
+    }
+    form {
+        width: 100%;
+        position: relative;
+    }
+    .content {
+        width: 100%;
+        position: absolute;
+    }
+    .box_login {
+        margin: 0;
+        margin-top: 20%;
+    }
+    .box_name {}
+}

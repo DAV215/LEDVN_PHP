@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/admincp.css?v=1">
     <link rel="stylesheet" href="../asset/css/Main_css/Main.css?v=1">
+    <link rel="stylesheet" href="assets\css\admincp_MB.css">
     <!-- FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
