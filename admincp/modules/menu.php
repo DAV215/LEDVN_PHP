@@ -11,9 +11,12 @@ session_start();
 
 
 <link rel="stylesheet" href="admincp\assets\css\admincp.css">
+<div class="sidebar_menu_mb">
+    hhhhhhhhhhhhh
+</div>
 <div class="sidebar_menu">
     <div class="main_menu">
-        <img src="../asset/images/Header/LEDVN_LOGO.png" alt="">
+        <img class="LOGO" src="../asset/images/Header/LEDVN_LOGO.png" alt="">
         <li>
             <a href="admincp_index.php?action=quanlydanhmucsanpham&query=them">Sản phẩm</a>
             <div class="child_menu" >
@@ -33,3 +36,13 @@ session_start();
     </div>
 
 </div>
+<script>
+    let screen = Array();
+     screen = window.screen;
+    // if(screen.width< 900){
+    //     let sidebar_menu  =document.querySelector('.sidebar_menu');
+    //     window.addEventListener("scroll",function(){
+    //         sidebar_menu.style.top = screen.height -sidebar_menu.offsetHeight  + 'px';
+    //     });
+    // }
+</script>
