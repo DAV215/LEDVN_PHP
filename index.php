@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="asset/css/Mainpage/mainpage.css">
     <link rel="stylesheet" href="asset/css/Mainpage/mainpage_mobile.css?v=1">
     <link rel="stylesheet" href="asset/css/Main_css/Main.css?1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,6 +25,7 @@
             include("admincp\config\config.php");
             include("pages\Header.php");
             include("pages\Menu.php");
+            include("pages\main\search_modal.php");
             include("pages\Main.php");
             // include("pages\Footer.php");
         ?>

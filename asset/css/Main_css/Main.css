@@ -15,7 +15,7 @@ html {
 }
 
 .content {
-    margin-left: 20%;
+    margin: 0 15%;
 }
 
 
@@ -23,7 +23,7 @@ html {
 
 .tendanhmuc {
     font-weight: 900;
-    font-size: x-large;
+    font-size: medium;
     display: flex;
     padding-top: 20px;
     padding-bottom: 55px;
@@ -109,6 +109,8 @@ html {
 
 /* product_list */
 
+
+/* 
 .product_list {
     display: flex;
     flex-wrap: wrap;
@@ -172,7 +174,8 @@ html {
 
 /* .product_item_size {} */
 
-.product_item_price {
+
+/* .product_item_price {
     height: 30px;
     display: flex;
     flex-wrap: nowrap;
@@ -182,9 +185,9 @@ html {
 .btn_detail {
     margin: 0 25%;
     background-color: none;
-}
+} */
 
-.btn_detail button {
+*/ .btn_detail button {
     transition: 0.3s;
     background-size: 200%;
     width: 100%;

@@ -7,8 +7,8 @@
 
 ?>
 <div class = "tendanhmuc" style="margin-left: 20%;">
-    <a href="index.php?quanly=sanpham"><p >Tất cả sản phẩm > </p></a>
-    <a href="index.php?quanly=danhmucsanpham&id=<?php echo $danhmuc ?>"><p ><?php echo  ' '.$danhmuc ?></p></a>
+    <a href="index.php?quanly=sanpham" style="opacity: 0.8;"><p >Tất cả sản phẩm </p></a>
+    <a href="index.php?quanly=danhmucsanpham&id=<?php echo $danhmuc ?>"><p ><?php echo  ' / '.$danhmuc ?></p></a>
 </div>
 <div class="content">
 <form action="index.php?quanly=themgiohang&idsanpham=<?php echo $product_data['id_sanpham'] ?>&action=them" method="post">
