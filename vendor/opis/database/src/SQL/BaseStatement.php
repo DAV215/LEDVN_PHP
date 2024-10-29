@@ -1,6 +1,6 @@
 <?php
 /* ===========================================================================
- * Copyright 2013-2018 Opis
+ * Copyright 2018 Zindex Software
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ class BaseStatement extends WhereStatement
 {
 
     /**
-     * @param   string $table
+     * @param   string|string[] $table
      * @param   Closure $closure
      *
      * @return  Delete|Select|BaseStatement
@@ -35,7 +35,7 @@ class BaseStatement extends WhereStatement
     }
 
     /**
-     * @param   string $table
+     * @param   string|string[] $table
      * @param   Closure $closure
      *
      * @return  Delete|Select|BaseStatement
@@ -47,7 +47,7 @@ class BaseStatement extends WhereStatement
     }
 
     /**
-     * @param   string $table
+     * @param   string|string[] $table
      * @param   Closure $closure
      *
      * @return  Delete|Select|BaseStatement
@@ -59,7 +59,7 @@ class BaseStatement extends WhereStatement
     }
 
     /**
-     * @param   string $table
+     * @param   string|string[] $table
      * @param   Closure $closure
      *
      * @return  Delete|Select|BaseStatement
@@ -70,4 +70,14 @@ class BaseStatement extends WhereStatement
         return $this;
     }
 
+    /**
+     * @param   string|string[] $table
+     *
+     * @return  Delete|Select|BaseStatement
+     */
+    public function crossJoin($table)
+    {
+        $this->sql->addJoinClause('CROSS', $table, null);
+        return $this;
+    }
 }

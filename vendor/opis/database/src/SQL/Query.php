@@ -1,6 +1,6 @@
 <?php
 /* ===========================================================================
- * Copyright 2013-2018 Opis
+ * Copyright 2018 Zindex Software
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,7 +68,7 @@ class Query extends BaseStatement
     }
 
     /**
-     * @param   string|array $columns
+     * @param   string|Closure|Expression|array $columns
      *
      * @return  Select
      */
@@ -90,7 +90,7 @@ class Query extends BaseStatement
 
     /**
      * @param   string $column
-     * @param   Closure $value
+     * @param   Closure $value (optional)
      *
      * @return  Select
      */
@@ -100,8 +100,8 @@ class Query extends BaseStatement
     }
 
     /**
-     * @param   string $column
-     * @param   Closure $value
+     * @param   string|Closure|Expression $column
+     * @param   Closure $value (optional)
      *
      * @return  Select
      */
@@ -111,7 +111,7 @@ class Query extends BaseStatement
     }
 
     /**
-     * @param   string|array $columns
+     * @param   string|Closure|Expression|array $columns
      * @param   string $order (optional)
      * @param   string $nulls (optional)
      *
@@ -164,7 +164,7 @@ class Query extends BaseStatement
     }
 
     /**
-     * @param   string $name
+     * @param   string|Closure|Expression $name
      *
      * @return  mixed|false
      */
@@ -174,7 +174,7 @@ class Query extends BaseStatement
     }
 
     /**
-     * @param   string $column (optional)
+     * @param   string|Closure|Expression $column (optional)
      * @param   bool $distinct (optional)
      *
      * @return  int
@@ -185,7 +185,7 @@ class Query extends BaseStatement
     }
 
     /**
-     * @param   string $column
+     * @param   string|Closure|Expression $column
      * @param   bool $distinct (optional)
      *
      * @return  int|float
@@ -196,7 +196,7 @@ class Query extends BaseStatement
     }
 
     /**
-     * @param   string $column
+     * @param   string|Closure|Expression $column
      * @param   bool $distinct (optional)
      *
      * @return  int|float
@@ -207,7 +207,7 @@ class Query extends BaseStatement
     }
 
     /**
-     * @param   string $column
+     * @param   string|Closure|Expression $column
      * @param   bool $distinct (optional)
      *
      * @return  int|float
@@ -218,7 +218,7 @@ class Query extends BaseStatement
     }
 
     /**
-     * @param   string $column
+     * @param   string|Closure|Expression $column
      * @param   bool $distinct (optional)
      *
      * @return  int|float
@@ -229,7 +229,7 @@ class Query extends BaseStatement
     }
 
     /**
-     * @param   array $tables (optional)
+     * @param   string[] $tables (optional)
      *
      * @return  int
      */

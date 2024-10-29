@@ -1,6 +1,6 @@
 <?php
 /* ===========================================================================
- * Copyright 2013-2018 Opis
+ * Copyright 2018 Zindex Software
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,7 +91,7 @@ class ForeignKey
 
     /**
      * @param string $table
-     * @param string ...$columns
+     * @param string[] $columns
      * @return $this
      */
     public function references(string $table, string ...$columns): self

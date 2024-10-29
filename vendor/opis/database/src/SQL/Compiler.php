@@ -1,6 +1,6 @@
 <?php
 /* ===========================================================================
- * Copyright 2013-2018 Opis
+ * Copyright 2018 Zindex Software
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -213,6 +213,7 @@ class Compiler
         } else {
             $this->params[] = $value;
         }
+
         return '?';
     }
 
@@ -389,8 +390,16 @@ class Compiler
         foreach ($joins as $join) {
             /** @var Join $joinObject */
             $joinObject = $join['join'];
-            $sql[] = $join['type'] . ' JOIN ' . $this->handleTables($join['table']) . ' ON ' .
-                $this->handleJoinConditions($joinObject->getJoinConditions());
+
+            $on = '';
+            if ($joinObject) {
+                $on = $this->handleJoinConditions($joinObject->getJoinConditions());
+            }
+            if ($on !== '') {
+                $on = ' ON ' . $on;
+            }
+
+            $sql[] = $join['type'] . ' JOIN ' . $this->handleTables($join['table']) . $on;
         }
         return ' ' . implode(' ', $sql);
     }
@@ -404,6 +413,9 @@ class Compiler
      */
     protected function handleJoinConditions(array $conditions)
     {
+        if (empty($conditions)) {
+            return '';
+        }
         $sql[] = $this->{$conditions[0]['type']}($conditions[0]);
         $count = count($conditions);
         for ($i = 1; $i < $count; $i++) {
@@ -547,7 +559,17 @@ class Compiler
      */
     protected function joinNested(array $join)
     {
-        return '(' . $this->handleJoinConditions($join['join']->getJoinCOnditions()) . ')';
+        return '(' . $this->handleJoinConditions($join['join']->getJoinConditions()) . ')';
+    }
+
+    /**
+     * @param   array $join
+     *
+     * @return string
+     */
+    protected function joinExpression(array $join)
+    {
+        return $this->wrap($join['expression']);
     }
 
     /**
@@ -638,6 +660,15 @@ class Compiler
     protected function whereSubquery(array $where)
     {
         return $this->wrap($where['column']) . ' ' . $where['operator'] . ' (' . $this->select($where['subquery']->getSQLStatement()) . ')';
+    }
+
+    /**
+     * @param array $where
+     *
+     * @return string
+     */
+    protected function whereNop(array $where) {
+        return $this->wrap($where['column']);
     }
 
     /**
@@ -767,7 +798,7 @@ class Compiler
      */
     protected function sqlFunctionMID(array $func)
     {
-        return 'MID(' . $this->wrap($func['column']) . ', ' . $this->param($func['start']) . ($func['length'] > 0 ? $this->param($func['length']) . ')' : ')');
+        return 'MID(' . $this->wrap($func['column']) . ', ' . $this->param($func['start']) . ($func['length'] > 0 ? ', ' . $this->param($func['length']) . ')' : ')');
     }
 
     /**

@@ -93,7 +93,6 @@ html {
 .name_of_hangmuc {
     letter-spacing: 0.2em;
     font-size: 1.2rem;
-    padding-top: 20px;
 }
 
 .tendanhmuc a {
@@ -105,87 +104,6 @@ html {
     text-decoration: none;
     color: #fd3838;
 }
-
-
-/* product_list */
-
-
-/* 
-.product_list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.product_list ul,
-.product_list li,
-.product_list li a {
-    text-decoration: none;
-    list-style: none;
-    color: #000000;
-}
-
-.product_list li:hover {
-    transform: translateY(-70px);
-    transition: 0.5s;
-}
-
-.product_list li:hover button {
-    background-position: right center;
-    color: rgb(37, 32, 37) !important;
-}
-
-.product_item {
-    margin: 20px 20px 70px 20px;
-    width: 300px;
-    height: 450px;
-    background-color: #8b808024;
-    border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-.product_item img {
-    width: 100%;
-    max-width: 300px;
-    height: 300px;
-    object-fit: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 20px 20px 0 0;
-}
-
-.product_des {
-    backdrop-filter: blur(20px);
-    opacity: 0.8;
-    margin-left: 10px;
-}
-
-.product_des p {
-    margin: 5px 0;
-}
-
-.product_item_name {
-    margin-bottom: 15px !important;
-    font-size: large;
-    font-weight: 900;
-    color: #fd3838;
-}
-
-
-/* .product_item_size {} */
-
-
-/* .product_item_price {
-    height: 30px;
-    display: flex;
-    flex-wrap: nowrap;
-    font-weight: 900 !important;
-}
-
-.btn_detail {
-    margin: 0 25%;
-    background-color: none;
-} */
 
 */ .btn_detail button {
     transition: 0.3s;
@@ -418,55 +336,19 @@ input.del_item:hover {
     margin: 0 20px;
 }
 
-
-/* baiviet */
-
-.baiviet_item {
-    height: inherit !important;
-    width: 70%;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 20px;
-}
-
-.baiviet_item a {
-    width: 100%;
-    display: flex;
-    position: relative;
-}
-
-.baiviet_item a img {
-    width: 50%;
-    border-radius: 20px 50px 0px 20px;
-}
-
-.baiviet_item a .baiviet_tomtat {
-    margin-left: 20px;
-}
-
-.baiviet_item a .btn_detail button {
-    position: absolute;
-    bottom: 5%;
-    width: 100px;
-    right: 20px;
-}
-
-.baivietchitiet .baiviet_img {
-    width: 60% !important;
-    height: auto !important;
-}
-
 @media only screen and (max-width: 900px) {
     .content {
         margin-left: 0%;
     }
     .tendanhmuc {
         font-weight: 900;
-        font-size: large;
+        font-size: 12px;
         display: flex;
         padding-top: 35px;
         padding-bottom: 25px;
-        padding-left: 5%;
+        padding-left: 2.5%;
         margin: 0 !important;
+        text-transform: uppercase;
     }
     .tendanhmuc p {
         padding: 0;

@@ -1,6 +1,6 @@
 <?php
 /* ===========================================================================
- * Copyright 2013-2018 Opis
+ * Copyright 2018 Zindex Software
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,23 +41,27 @@ class HavingStatement
     }
 
     /**
-     * @param   string|Closure $column
+     * @param   string|Expression|Closure $column
      * @param   Closure $value
      * @param   string $separator
      *
      * @return  $this
      */
-    protected function addCondition($column, Closure $value = null, $separator): self
+    protected function addCondition($column, Closure $value = null, $separator = 'AND'): self
     {
-        if ($column instanceof Closure) {
+        if (($column instanceof Closure) && $value === null) {
             $this->sql->addHavingGroupCondition($column, $separator);
         } else {
-            $value($this->expression->init($column, $separator));
+            $expr = $this->expression->init($column, $separator);
+            if ($value) {
+                $value($expr);
+            }
         }
         return $this;
     }
 
     /**
+     * @internal
      * @return SQLStatement
      */
     public function getSQLStatement(): SQLStatement
@@ -66,7 +70,7 @@ class HavingStatement
     }
 
     /**
-     * @param   string $column
+     * @param   string|Expression|Closure $column
      * @param   Closure $value (optional)
      *
      * @return  $this
@@ -77,18 +81,18 @@ class HavingStatement
     }
 
     /**
-     * @param   string $column
+     * @param   string|Expression $column
      * @param   Closure $value (optional)
      *
      * @return  $this
      */
     public function andHaving($column, Closure $value = null): self
     {
-        return $this->having($column, $value);
+        return $this->addCondition($column, $value, 'AND');
     }
 
     /**
-     * @param   string $column
+     * @param   string|Expression $column
      * @param   Closure $value (optional)
      *
      * @return  $this

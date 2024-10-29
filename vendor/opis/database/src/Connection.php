@@ -1,6 +1,6 @@
 <?php
 /* ===========================================================================
- * Copyright 2013-2018 Opis
+ * Copyright 2018 Zindex Software
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@
 namespace Opis\Database;
 
 use PDO;
+use PDOStatement;
 use PDOException;
 use Serializable;
 
@@ -518,6 +519,8 @@ class Connection implements Serializable
                 return $param;
             } elseif ($param === null) {
                 return 'NULL';
+            } elseif (is_bool($param)) {
+                return $param ? 'TRUE' : 'FALSE';
             } else {
                 return $compiler->quote($param);
             }
@@ -562,7 +565,10 @@ class Connection implements Serializable
         }
 
         try {
-            $result = $prepared['statement']->execute($prepared['params']);
+            if ($prepared['params']) {
+                $this->bindValues($prepared['statement'], $prepared['params']);
+            }
+            $result = $prepared['statement']->execute();
         } catch (PDOException $e) {
             throw new PDOException($e->getMessage() . ' [ ' . $this->replaceParams($prepared['query'],
                     $prepared['params']) . ' ] ', (int)$e->getCode(), $e->getPrevious());
@@ -574,6 +580,27 @@ class Connection implements Serializable
         }
 
         return $result;
+    }
+
+    /**
+     * @param PDOStatement $statement
+     * @param array $values
+     */
+    protected function bindValues(PDOStatement $statement, array $values)
+    {
+        foreach ($values as $key => $value) {
+            $param = PDO::PARAM_STR;
+
+            if (is_null($value)) {
+                $param = PDO::PARAM_NULL;
+            } elseif (is_integer($value)) {
+                $param = PDO::PARAM_INT;
+            } elseif (is_bool($value)) {
+                $param = PDO::PARAM_BOOL;
+            }
+
+            $statement->bindValue($key + 1, $value, $param);
+        }
     }
 
     /**
@@ -605,5 +632,27 @@ class Connection implements Serializable
         foreach ($object as $key => $value) {
             $this->{$key} = $value;
         }
+    }
+
+    public function __serialize()
+    {
+        return [
+            'username' => $this->username,
+            'password' => $this->password,
+            'logQueries' => $this->logQueries,
+            'options' => $this->options,
+            'commands' => $this->commands,
+            'dsn' => $this->dsn,
+        ];
+    }
+
+    public function __unserialize(array $data)
+    {
+        $this->username = $data['username'];
+        $this->password = $data['password'];
+        $this->logQueries = $data['logQueries'];
+        $this->options = $data['options'];
+        $this->commands = $data['commands'];
+        $this->dsn = $data['dsn'];
     }
 }

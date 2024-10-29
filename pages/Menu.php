@@ -95,11 +95,13 @@
                 <!-- <a href="index.php?quanly=timkiem" name=""><i class="fa-solid fa-magnifying-glass"></i></a> -->
             </form>
         </li>
-        <button id="showmenu_moblie" onclick=" menu_mobile()"><i class="fa-solid fa-bars"></i></button>
+        <button id="showmenu_mobile">
+            <i class="fa-solid fa-bars"></i>
+        </button>
     </div>
 
 </div>
-<div id="content_menu_moblie" >
+<div id="content_menu_moblie">
     <li>
         <a href="index.php?quanly=trangchu">Trang chủ</a>
     </li>

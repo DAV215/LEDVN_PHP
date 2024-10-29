@@ -20,17 +20,12 @@
 }
 
 .logo_LEDVN {
-    width: 10%;
+    /* width: 10%; */
 }
 
 .search_box {
     width: 10%;
 }
-
-
-/* .menu li {
-    height: 40px;
-} */
 
 .menu>ul {
     margin: 0;
@@ -292,6 +287,7 @@ li.search {
     border-radius: 0 0 0 20px;
     z-index: 99999999;
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: 0 0 20px 20px;
 }
 

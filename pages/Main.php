@@ -34,7 +34,7 @@
                 include('pages/main/tintucchitiet.php');
             }
             elseif($tam == 'sanpham'){
-                include('pages/main/index.php');
+                include('pages/main/sanpham22T9.php');
             }
             elseif($tam == 'themgiohang'){
                 include('pages/main/themgiohang.php');

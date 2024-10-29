@@ -22,6 +22,7 @@
                 include("modules/main.php");
                 include("modules/quanlysanpham/clear_img.php");
                 include("modules/quanlybaiviet/clear_img.php");
+                include("modules/quanlybanner/clear_img.php");
         ?> 
     </div>
 

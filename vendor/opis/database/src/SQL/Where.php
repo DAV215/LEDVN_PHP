@@ -1,6 +1,6 @@
 <?php
 /* ===========================================================================
- * Copyright 2013-2018 Opis
+ * Copyright 2018 Zindex Software
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ use Closure;
 
 class Where
 {
-    /** @var    string */
+    /** @var    string|Expression */
     protected $column;
 
     /** @var    string */
@@ -40,12 +40,15 @@ class Where
     }
 
     /**
-     * @param   string $column
+     * @param   string|Expression|Closure $column
      * @param   string $separator
      * @return  Where
      */
-    public function init(string $column, string $separator): self
+    public function init($column, string $separator): self
     {
+        if ($column instanceof Closure) {
+            $column = Expression::fromClosure($column);
+        }
         $this->column = $column;
         $this->separator = $separator;
         return $this;
@@ -329,10 +332,21 @@ class Where
     }
 
     /**
+     * @return  WhereStatement|Select|Delete|Update
+     */
+    public function nop(): WhereStatement {
+        $this->sql->addWhereNop($this->column, $this->separator);
+        return $this->statement;
+    }
+
+    /**
      * @inheritDoc
      */
     public function __clone()
     {
+        if ($this->column instanceof Expression) {
+            $this->column = clone $this->column;
+        }
         $this->sql = clone $this->sql;
         $this->statement = new WhereStatement($this->sql);
     }

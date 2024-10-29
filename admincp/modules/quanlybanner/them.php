@@ -1,7 +1,7 @@
 
-<p class="pagename">THÊM SẢN PHẨM</p>
+<p class="pagename">THÊM banner</p>
 <div class="wrapper">
-    <form action="modules/quanlybaiviet/xuly.php" method="post" enctype="multipart/form-data">
+    <form action="modules/quanlybanner/xuly.php" method="post" enctype="multipart/form-data">
         <table class="data_table">
 
             <tr>
@@ -17,16 +17,17 @@
                 <td>Hình ảnh</td>
                 <td id= "view_img">
                     <div class="img_preview">
-                        <img src="" alt="" id="sp_hinh-upload" >
+                        <img src="" alt="" id="link_img" >
                     </div>
                 </td>
             </tr>
             <tr>
-            <td colspan="2"><input type="file" name="link_img" class="upload_img" onchange=readURL(event)></td>
+                <td colspan="2"><input type="file" name="link_img" class="upload_img" onchange=readURL(event)></td>
+            </tr>
 
             </tr>
                 <tr>
-                <td colspan="2"><input class="submit_btn" type="submit" name="thembaiviet" value="Xác nhận thêm bài viết"></td>
+                <td colspan="2"><input class="submit_btn" type="submit" name="thembanner" value="Xác nhận thêm bài viết"></td>
             </tr>
 
         </table>

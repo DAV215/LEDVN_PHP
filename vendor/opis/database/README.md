@@ -1,8 +1,8 @@
 Opis Database
 =============
-[![Build Status](https://travis-ci.org/opis/database.png)](https://travis-ci.org/opis/database)
+[![Tests](https://github.com/opis/database/workflows/Tests/badge.svg)](https://github.com/opis/database/actions)
 [![Latest Stable Version](https://poser.pugx.org/opis/database/version.png)](https://packagist.org/packages/opis/database)
-[![Latest Unstable Version](https://poser.pugx.org/opis/database/v/unstable.png)](//packagist.org/packages/opis/database)
+[![Latest Unstable Version](https://poser.pugx.org/opis/database/v/unstable.png)](https://packagist.org/packages/opis/database)
 [![License](https://poser.pugx.org/opis/database/license.png)](https://packagist.org/packages/opis/database)
 
 Database abstraction layer
@@ -17,17 +17,17 @@ Currently, we are officially supporting MySQL, PostgreSQL, Microsoft SQL, and SQ
 We also provide experimental support - without any commitment regarding bug fixes and updates - for Firebird, 
 IBM DB2, Oracle, and NuoDB query builder.
 
-### Documentation
+## Documentation
 
 The full documentation for this library can be found [here][documentation]
 
-### License
+## License
 
 **Opis Database** is licensed under the [Apache License, Version 2.0][apache_license]
 
-### Requirements
+## Requirements
 
-* PHP 7.0.* or higher
+* PHP 7 or higher
 * PDO
 
 ## Installation
@@ -50,9 +50,8 @@ Or you could directly reference it into your `composer.json` file as a dependenc
 ```
 
 
-
-[documentation]: https://www.opis.io/database
+[documentation]: https://opis.io/database
 [apache_license]: https://www.apache.org/licenses/LICENSE-2.0 "Apache License"
-[Packagist]: https://packagist.org/packages/opis/orm "Packagist"
+[Packagist]: https://packagist.org/packages/opis/database "Packagist"
 [Composer]: https://getcomposer.org "Composer"
 

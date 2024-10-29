@@ -1,5 +1,5 @@
 {
     "require": {
-        "opis/database": "^4.0"
+        "opis/database": "^4.3"
     }
 }

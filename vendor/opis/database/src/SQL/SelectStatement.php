@@ -1,6 +1,6 @@
 <?php
 /* ===========================================================================
- * Copyright 2013-2018 Opis
+ * Copyright 2018 Zindex Software
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,7 +64,7 @@ class SelectStatement extends BaseStatement
     }
 
     /**
-     * @param   string|array $columns
+     * @param   string|Closure|Expression|string[]|Closure[]|Expression[] $columns
      *
      * @return  $this
      */
@@ -114,7 +114,7 @@ class SelectStatement extends BaseStatement
     }
 
     /**
-     * @param $columns
+     * @param |Closure|Expression|string[]|Closure[]|Expression[] $columns
      * @param string $order
      * @param string|null $nulls
      * @return SelectStatement
@@ -149,7 +149,7 @@ class SelectStatement extends BaseStatement
     }
 
     /**
-     * @param   string|array|Closure $columns
+     * @param string|Closure|Expression|string[]|Closure[]|Expression[] $columns
      *
      */
     public function select($columns = [])
@@ -167,15 +167,15 @@ class SelectStatement extends BaseStatement
     }
 
     /**
-     * @param   string $name
+     * @param   string|Closure|Expression $name
      */
-    public function column(string $name)
+    public function column($name)
     {
         (new ColumnExpression($this->sql))->column($name);
     }
 
     /**
-     * @param   string $column (optional)
+     * @param   string|Closure|Expression $column (optional)
      * @param   bool $distinct (optional)
      */
     public function count($column = '*', bool $distinct = false)
@@ -184,37 +184,37 @@ class SelectStatement extends BaseStatement
     }
 
     /**
-     * @param   string $column
+     * @param   string|Closure|Expression $column
      * @param   bool $distinct (optional)
      */
-    public function avg(string $column, bool $distinct = false)
+    public function avg($column, bool $distinct = false)
     {
         (new ColumnExpression($this->sql))->avg($column, null, $distinct);
     }
 
     /**
-     * @param   string $column
+     * @param   string|Closure|Expression $column
      * @param   bool $distinct (optional)
      */
-    public function sum(string $column, bool $distinct = false)
+    public function sum($column, bool $distinct = false)
     {
         (new ColumnExpression($this->sql))->sum($column, null, $distinct);
     }
 
     /**
-     * @param   string $column
+     * @param   string|Closure|Expression $column
      * @param   bool $distinct (optional)
      */
-    public function min(string $column, bool $distinct = false)
+    public function min($column, bool $distinct = false)
     {
         (new ColumnExpression($this->sql))->min($column, null, $distinct);
     }
 
     /**
-     * @param   string $column
+     * @param   string|Closure|Expression $column
      * @param   bool $distinct (optional)
      */
-    public function max(string $column, bool $distinct = false)
+    public function max($column, bool $distinct = false)
     {
         (new ColumnExpression($this->sql))->max($column, null, $distinct);
     }

@@ -12,7 +12,6 @@ session_start();
 
 <link rel="stylesheet" href="admincp\assets\css\admincp.css">
 <div class="sidebar_menu_mb">
-    hhhhhhhhhhhhh
 </div>
 <div class="sidebar_menu">
     <div class="main_menu">

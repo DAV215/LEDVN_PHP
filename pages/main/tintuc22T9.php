@@ -11,7 +11,7 @@
             ?>
             <li class="post_item">
                 <a
-                    href="index.php?quanly=chitietbaiviet&danhmuc=<?php echo $row_danhmuc['tendanhmuc_baiviet'] ?>&idbaiviet=<?php echo $idbaiviet ?>">
+                    href="index.php?quanly=chitietbaiviet&danhmuc=<?php echo  $baiviet_arr['danhmucbaiviet'] ?>&idbaiviet=<?php echo  $baiviet_arr['id_baiviet'] ?>">
                     <div class="post_img">
                         <img src="admincp/modules/quanlybaiviet/uploads/<?php echo $baiviet_arr['hinhanh'] ?>" alt="">
                     </div>

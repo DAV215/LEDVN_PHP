@@ -1,6 +1,6 @@
 <?php
 /* ===========================================================================
- * Copyright 2013-2018 Opis
+ * Copyright 2018 Zindex Software
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,6 @@
  * ============================================================================ */
 
 namespace Opis\Database\SQL;
-
-use Closure;
 
 class InsertStatement
 {
@@ -38,6 +36,7 @@ class InsertStatement
     }
 
     /**
+     * @internal
      * @return SQLStatement
      */
     public function getSQLStatement(): SQLStatement
@@ -53,13 +52,6 @@ class InsertStatement
     {
         foreach ($values as $column => $value) {
             $this->sql->addColumn($column);
-
-            if ($value instanceof Closure) {
-                $expression = new Expression();
-                $value($expression);
-                $value = $expression;
-            }
-
             $this->sql->addValue($value);
         }
 

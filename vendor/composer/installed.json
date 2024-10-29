@@ -2,31 +2,32 @@
     "packages": [
         {
             "name": "opis/database",
-            "version": "4.0.0",
-            "version_normalized": "4.0.0.0",
+            "version": "4.3.0",
+            "version_normalized": "4.3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/opis/database.git",
-                "reference": "f420da08fdbfc39aad2573254c09db1121cca4e1"
+                "reference": "bc077bca2b38eaa69e15c298dbb35088737f2695"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opis/database/zipball/f420da08fdbfc39aad2573254c09db1121cca4e1",
-                "reference": "f420da08fdbfc39aad2573254c09db1121cca4e1",
+                "url": "https://api.github.com/repos/opis/database/zipball/bc077bca2b38eaa69e15c298dbb35088737f2695",
+                "reference": "bc077bca2b38eaa69e15c298dbb35088737f2695",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.0.0"
+                "ext-pdo": "*",
+                "php": "^7.0 || ^8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.5",
+                "phpunit/phpunit": "^6.5 || ^7.0 || ^8.0 || ^9.0",
                 "symfony/yaml": "^3.4"
             },
-            "time": "2018-06-05T09:56:12+00:00",
+            "time": "2024-09-29T19:50:31+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.0.x-dev"
+                    "dev-master": "4.1.x-dev"
                 }
             },
             "installation-source": "dist",
@@ -43,10 +44,14 @@
                 {
                     "name": "Marius Sarca",
                     "email": "marius.sarca@gmail.com"
+                },
+                {
+                    "name": "Sorin Sarca",
+                    "email": "sarca_sorin@hotmail.com"
                 }
             ],
             "description": "A database abstraction layer over PDO, that provides a powerful and intuitive query builder, bundled with an easy to use schema builder",
-            "homepage": "http://opis.io",
+            "homepage": "https://opis.io/database",
             "keywords": [
                 "Abstraction Layer",
                 "database",
@@ -60,7 +65,7 @@
             ],
             "support": {
                 "issues": "https://github.com/opis/database/issues",
-                "source": "https://github.com/opis/database/tree/master"
+                "source": "https://github.com/opis/database/tree/4.3.0"
             },
             "install-path": "../opis/database"
         }

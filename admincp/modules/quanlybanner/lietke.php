@@ -10,6 +10,7 @@
         <th>Tên banner</th>
         <th>Nội dung</th>
         <th>Hình ảnh</th>
+        <th>Thời gian</th>
         <th>Tác vụ</th>
     </tr>
 
@@ -23,6 +24,7 @@
                 <td><?php echo $row['title']?></td>
                 <td><?php echo $row['content']?></td>
                 <td><img src="modules/quanlybanner/uploads/<?php echo $row['link_img']?>" alt="" srcset=""></td>
+                <td><?php echo $row['time']?></td>
                 <td class="tacvu">
                     <a href="modules/quanlybanner/xuly.php?id=<?php echo $row['id']?>">Xóa</a>
                     

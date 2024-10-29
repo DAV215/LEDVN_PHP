@@ -2,6 +2,55 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## v4.3.0 - 2024-09-29
+
+### Added
+
+- Support for PHP 8
+
+## v4.2.1 - 2021-04-14
+
+### Fixed
+
+- Bug in `mid` function
+
+## v4.2.0 - 2020-05-24
+
+### Added
+
+- `nop` function (no operation) to `where` conditions
+
+## v4.1.1 - 2020-02-03
+
+### Fixed 
+
+- SQLite compatibility [issue](/opis/database/issues/58)
+
+## v4.1.0 - 2019-03-25
+
+### Added
+
+- Better support for expressions in column expressions and aggregate functions
+- Support for expressions in the following clauses:
+`WHERE`, `HAVING`, `GROUP BY`, `ORDER BY`, `JOIN` and `ON`
+- Support for aliased expressions in `SELECT` statement
+- `CROSS JOIN` support in `Opis\Database\SQL\BaseStatement::crossJoin`
+(there is no `ON` clause)
+- Static method `Opis\Database\SQL\Expression::fromClosure`
+
+### Fixed
+
+- `HAVING` statements not working
+- Array of column expressions not working
+
+## v4.0.1 - 2018-12-13
+
+### Added
+- Dependency to PDO extension in `composer.json` file
+
+### Fixed
+- Fixed [a bug](https://github.com/opis/database/issues/38) related to boolean values
+
 ## v4.0.0 - 2018-06-05
 
 ### Removed

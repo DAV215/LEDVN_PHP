@@ -4,7 +4,7 @@ $sql_cmd = "SELECT * FROM tbl_sanpham WHERE noibat = 1 ORDER BY id_sanpham DESC"
 $sql_query = mysqli_query($mysqli, $sql_cmd);
 ?>
 <?php
-require("pages\call_data\ads_data.php");
+require("pages/call_data/ads_data.php");
 ?>
 <!-- <div class="content">
     <h1 class="name_of_hangmuc" style = "margin:5%;">Thiết kế neon </h1>
@@ -56,6 +56,8 @@ require("pages\call_data\ads_data.php");
         <img src="asset/images/Partner/FF.jpg" alt="" loading="lazy">
         <img src="asset/images/Partner/TA.jpg" alt="" loading="lazy">
         <img src="asset/images/Partner/LX.jpg" alt="" loading="lazy">
+        <img src="https://kprint.vn/wp-content/uploads/2020/09/logo.png" alt="" loading="lazy">
+        <img src="https://trinitygroup.vn/wp-content/uploads/2024/04/trinity.png" alt="" loading="lazy">
     </div>
 </div>
 <script src="asset/js/product_noibat.js"></script>

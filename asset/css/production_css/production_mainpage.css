@@ -58,7 +58,7 @@
         
         .product_item {
             /* margin: 20px 20px 70px 20px; */
-            width: 20%;
+            width: 23.5%;
             background-color: none !important;
             border-radius: 20px;
             box-shadow: none !important;
@@ -72,7 +72,8 @@
         .product_item img {
             filter: blur(1px);
             width: 100%;
-            height: 300px;
+            height: auto;
+            aspect-ratio: 1;
             background-repeat: no-repeat;
             background-position: center;
         }
@@ -281,13 +282,20 @@
             }
             .product_item a {
                 position: relative;
+                width: 100%;
+                aspect-ratio: auto;
+            }
+            .product_pic {
+                position: relative;
+                width: 100% !important;
+                aspect-ratio: 1;
             }
             .product_item img {
                 filter: blur(0);
                 width: 100%;
-                height: 200px;
-                background-repeat: no-repeat;
-                background-position: center;
+                height: auto;
+                vertical-align: middle;
+                aspect-ratio: 1;
             }
             .product_des {
                 backdrop-filter: blur(20px);
