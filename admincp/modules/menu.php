@@ -12,7 +12,6 @@ session_start();
 
 <link rel="stylesheet" href="admincp\assets\css\admincp.css">
 <div class="sidebar_menu_mb">
-    hhhhhhhhhhhhh
 </div>
 <div class="sidebar_menu">
     <div class="main_menu">
@@ -32,6 +31,7 @@ session_start();
             </div>
         </li>
         <li><a href="admincp_index.php?action=quanlygiohang&query=lietke">Quản lý giỏ hàng</a></li>
+        <li><a href="admincp_index.php?action=quanlybanner&query=them">Quản lý Banner</a></li>
         <li><a href="admincp_index.php?action=dangxuat">Đăng xuất AD <?php echo $_SESSION['dangnhap']; ?></a></li>
     </div>
 

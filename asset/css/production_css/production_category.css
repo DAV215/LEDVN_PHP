@@ -1,0 +1,19 @@
+.product_list:hover img {
+    filter: grayscale(0) !important;
+}
+
+.product_list {
+    justify-content: normal !important;
+    padding: 0;
+}
+
+.tendanhmuc {
+    font-weight: 900;
+    font-size: 12px;
+    display: flex;
+    padding-top: 35px;
+    padding-bottom: 25px;
+    padding-left: 2.5%;
+    margin: 0 !important;
+    text-transform: uppercase;
+}

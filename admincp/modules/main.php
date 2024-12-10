@@ -48,6 +48,12 @@
         }
         else if($tam == 'quanlybaiviet' && $query == 'sua'){
             include('modules/quanlybaiviet/sua.php');
+        }else if($tam == 'quanlybanner' && $query == 'them'){
+            include('modules/quanlybanner/them.php');
+            include('modules/quanlybanner/lietke.php');
+        }
+        else if($tam == 'quanlybanner' && $query == 'sua'){
+            include('modules/quanlybanner/sua.php');
         }
         else{
             include('modules\dashboard.php');

@@ -23,7 +23,7 @@
             ?>
             <li class="product_item">
                 <a href="index.php?quanly=chitietsp&danhmuc=<?php echo $row_danhmuc['tendanhmuc']?>&idsanpham=<?php echo $idsanpham?>">
-                    <img src="admincp/modules/quanlysanpham/uploads/<?php echo $product_data_arr['hinhanh']  ?>" alt="">
+                    <img src="admincp/modules/quanlysanpham/uploads/<?php echo $product_data_arr['hinhanh']  ?>" alt="" loading="lazy">
                     <div class="product_des">
                         <p class="product_item_name">    <?php echo $product_data_arr['tensp'] ?></p>
                         <p class="product_item_size">KT: <?php echo $product_data_arr['kichthuoc'] ?></p>

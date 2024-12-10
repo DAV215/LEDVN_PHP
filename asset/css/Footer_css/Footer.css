@@ -20,6 +20,14 @@
     }
 }
 
+.footer_col_title {
+    width: 100%;
+}
+
+.fanpage {
+    width: 100%;
+}
+
 .footer_body {
     position: sticky;
     bottom: 0;
@@ -58,6 +66,7 @@
     color: #f44336;
     font-size: x-large;
     font-weight: bolder;
+    margin: 0;
 }
 
 .footer_col_content h2 {

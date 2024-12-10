@@ -14,6 +14,10 @@
     animation: showcontent_slider ease 0.5s;
 }
 
+.item_noibat_des {
+    padding: 20px 0;
+}
+
 .item_noibat img {
     position: relative;
     width: 45%;
@@ -29,6 +33,7 @@
 
 .item_noibat_name {
     animation: showcontent_slider ease 1s;
+    margin: 0px !important;
 }
 
 .item_noibat_gia {

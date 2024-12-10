@@ -17,7 +17,7 @@
         ?>
             <tr>
                 <td><?php echo $i ?></td>
-                <td><?php echo $row['tendanhmuc']?></td>
+                <td><?php echo $row['id']?></td>
                 <td class="tacvu">
                     <a href="modules/quanlydanhmucsp/xuly.php?iddanhmuc=<?php echo $row['id_danhmuc']?>">Xóa</a>
                     
